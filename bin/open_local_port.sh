@@ -4,6 +4,8 @@ set -e
 BIN_ROOT=$(dirname "$(readlink -f "$0")")
 source "$BIN_ROOT/../include/helpers.sh"
 
+request_root_access "$0" "$@";
+
 if is_not_root_user; then
     echo "Please run with sudo" >&2
     exit 1;
