@@ -3,7 +3,7 @@ source "$QP_ROOT/include/helpers.sh"
 
 alias gitbrd='git branch -d $(git branch | fzf -m)'
 alias gitco='git checkout $(git branch | fzf)'
-alias gitpud='git push origin :$(git branch | fzf)'
+alias gitpud='git push --delete origin $(git branch -a | sed "s|remotes/origin/||" | fzf -m)'
 alias gitrei='git_rebase_i'
 
 function git_rebase_i {
