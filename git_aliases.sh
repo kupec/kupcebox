@@ -8,6 +8,7 @@ alias gitpud='git push --delete origin $(git branch -a | sed "s|remotes/origin/|
 alias gitrei='git_rebase_i'
 
 function git_rebase_i {
+    git br -f copy
     git rebase -i $(git log --oneline --decorate --graph | fzf | pick_col 2)
 }
 
