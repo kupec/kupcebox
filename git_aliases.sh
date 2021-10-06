@@ -6,9 +6,16 @@ alias gitbrd='git branch -d $(gitbr -m)'
 alias gitco='git checkout $(gitbr)'
 alias gitpud='git push --delete origin $(git branch -a | sed "s|remotes/origin/||" | fzf -m)'
 alias gitrei='git_rebase_i'
+alias gitreb='git_rebase_to_branch'
+alias gitreib='git_rebase_to_branch -i'
 
 function git_rebase_i {
     git br -f copy
     git rebase -i $(git log --oneline --decorate --graph | fzf | pick_col 2)
 }
 
+function git_rebase_to_branch() {
+    REBASE_FLAGS="$1"
+    git br -f copy
+    git rebase $REBASE_FLAGS $(gitbr)
+}
