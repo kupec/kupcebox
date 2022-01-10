@@ -4,3 +4,4 @@ export PATH="$PATH:$QP_ROOT/bin"
 
 source "$QP_ROOT/git_aliases.sh"
 source "$QP_ROOT/tmux_aliases.sh"
+source "$QP_ROOT/projects.sh"
