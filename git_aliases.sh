@@ -8,6 +8,7 @@ alias gitpud='git push --delete origin $(git branch -a | sed "s|remotes/origin/|
 alias gitrei='git_rebase_i'
 alias gitreb='git_rebase_to_branch'
 alias gitreib='git_rebase_to_branch -i'
+alias gitchp='git cherry-pick $(gitbr)'
 
 function git_rebase_i {
     git br -f copy
